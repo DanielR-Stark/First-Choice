@@ -1,0 +1,2 @@
+class CareerCategory < ApplicationRecord
+end
