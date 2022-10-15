@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_education_center
   def new
+    @education_center = EducationCenter.find(params[:education_center_id])
     @review = Review.new
   end
 
