@@ -13,6 +13,10 @@ class ReviewsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
+    def show
+      @reviews.all
+    end
   end
 
   private
