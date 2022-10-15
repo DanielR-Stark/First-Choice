@@ -1,0 +1,9 @@
+<h1>Academias</h1>
+
+<ul>
+  <% @educationcenters.each do |center| %>
+    <li><%= center.name %>
+  <% end %>
+</ul>
+
+<%= link_to "Agregar nueva academia" , new_education_center_path, class: ""%>
