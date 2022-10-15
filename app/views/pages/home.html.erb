@@ -10,7 +10,7 @@
       <div class="form-group">
         <form>
 
-          <input type="email" class="form-control" id="exampleInputEmail1"
+          <input type="text" class="form-control" id="exampleInputEmail1"
                 aria-describedby="emailHelp" placeholder="Search for a Bootcamp">
 
         </form>
@@ -34,9 +34,9 @@
             <section class="">
               <p class="d-flex justify-content-center align-items-center">
                 <span class="me-3" style="color: #ffffff">Register for free </span>
-                <button type="button" class="btn btn-outline-light btn-rounded" id="myButton" style="margin: 25px">
-                  Sign up!
-                </button>
+                <!--<button type="button" class="btn btn-outline-light btn-rounded" id="myButton" style="margin: 25px" >-->
+                  <%= link_to "Login", new_user_session_path, class: "myButton" %>
+                <!--</button>-->
                 <button type="button" class="btn btn-outline-light btn-rounded" id="myButton">
                   Test Rapido
                 </button>
@@ -59,3 +59,4 @@
   </div>
 
 </div>
+
