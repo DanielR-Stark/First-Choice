@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h1> Registro de Academia</h1>
+
+  <%= simple_form_for  @educationcenter do |f| %>
+    <%= f.input :name %>
+    <%= f.input :city %>
+    <%= f.input :description %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Volver al listado", education_centers_path, class: "btn btn-primary" %>
+</div>
