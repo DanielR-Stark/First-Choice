@@ -8,8 +8,11 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.education_center = @education_center
-    @review.save
-    redirect_to education_center_path(@education_center)
+    if @review.save
+      redirect_to education_center_path(@education_center)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
