@@ -1,0 +1,8 @@
+<h1>New review</h1>
+
+<%= simple_form_for ([@education_center, @education_center.reviews.build]) do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :statement %>
+  <%# <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%= f.button :submit %>
+<% end %>
