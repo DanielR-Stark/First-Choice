@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_educationcenter
+  before_action :find_education_center
   before_action :find_review, only: [:edit, :update, :destroy]
 
   def new
