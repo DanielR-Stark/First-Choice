@@ -1,6 +1,15 @@
 <p><%= review.rating %></p>
 <p><%= review.statement %></p>
 
+<%# The conditions below were created to make sure the user is logged in before displaying the edit, delete methods %>
+<% if user_signed_in? %>
+
+<% if review.user_id == current_user.id  %>
+
 <%= link_to "Edit", edit_education_center_review_path(review.education_center, review) %>
 <%= link_to "Delete", education_center_review_path(review.education_center, review), method: :delete, data: {
   confirm: "Are you sure?"} %>
+
+  <% end %>
+
+  <% end %>
