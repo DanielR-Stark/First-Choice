@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :find_education_center
   before_action :find_review, only: [:edit, :update, :destroy]
+
   def new
     # @education_center = EducationCenter.find(params[:education_center_id])
     @review = Review.new
@@ -28,6 +29,11 @@ class ReviewsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @review.destroy
+    redirect_to education_center_path(@education_center)
   end
 
   private
