@@ -2,7 +2,7 @@
 
 <ul>
   <% @educationcenters.each do |center| %>
-    <li><%= center.name %>
+    <li><%= center.name %> <%= link_to "Ver", education_center_path(center.id) %></li>
   <% end %>
 </ul>
 

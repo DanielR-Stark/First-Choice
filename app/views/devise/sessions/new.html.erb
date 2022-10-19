@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Inicio sesion -->
 <div class ="login-container">
   <div class="row justify-content-center">
@@ -23,6 +24,21 @@
       <% end %>
 
       <%= render "devise/shared/links" %>
+=======
+<h2>Log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+  data: {turbo: false}) do |f| %>
+    <%= f.input :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" } %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+>>>>>>> 022a330361822c02fac1c150f1861c7138aca5c4
 
     </div>
   </div>

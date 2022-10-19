@@ -6,7 +6,7 @@
   <%= simple_form_for  @educationcenter do |f| %>
     <%= f.input :name %>
     <%= f.input :city %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :text %>
     <%= f.submit class: "btn btn-primary" %>
   <% end %>
   <br>

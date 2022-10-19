@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -11,3 +12,13 @@
 <div>
    <%= link_to "Add review", new_education_center_review_path(@education_center) %>
 </div>
+=======
+<h2><%= @educationcenter.name %></h2>
+<p><%= @educationcenter.city %></p>
+<p><%= @educationcenter.description %></p>
+
+<%= link_to "Delete",
+  education_center_path(@educationcenter),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+>>>>>>> 022a330361822c02fac1c150f1861c7138aca5c4
