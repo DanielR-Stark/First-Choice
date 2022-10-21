@@ -4,8 +4,8 @@
 
 <ul>
   <% @educationcenters.each do |center| %>
-    <li><h2 class= "titulo-education-center"><%= center.name %></h2> <%= link_to "Ver", education_center_path(center.id) %></li>
-      <div id="carouselExampleControls" class="carousel-slide" data-bs-ride="carousel">
+    <li><h1 class= "titulo-education"><%= center.name %></h1> <%= link_to "Ver", education_center_path(center.id) %></li>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="https://www.lewagon.com/default_meta_image.jpg" class="d-block w-100" alt="...">
@@ -29,7 +29,7 @@
   <% end %>
 </ul>
 <div class ="ctn-boton">
-   <%= link_to "Agregar nueva academia" , new_education_center_path, class: "button-education-center"%>
+<%= link_to "Agregar nueva academia" , new_education_center_path, class: "myButton"%>
 </div>
 
 
