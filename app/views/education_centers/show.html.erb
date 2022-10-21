@@ -4,5 +4,8 @@
 
 <%= link_to "Delete",
   education_center_path(@educationcenter),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary"
 %>
+<br>
+<br>
+<%= link_to "Volver al listado", education_centers_path, class: "btn btn-primary" %>
