@@ -13,8 +13,7 @@ class ReviewsController < ApplicationController
     @review.educationcenter_id = @educationcenter_id
     @review.user_id = current_user.id
     if @review.save
-      # redirect_to education_center_path(@education_center) -- Need to confirm if we should redirect to this path instead of root
-      redirect_to root_path
+      redirect_to education_center_path(@educationcenter)
     else
       render :new
     end
