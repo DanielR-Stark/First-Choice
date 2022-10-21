@@ -10,32 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_10_15_185856) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_152836) do
+>>>>>>> 86fd446acac29481ec34ce3ce37a0a94969276e4
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "career_categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "careers", force: :cascade do |t|
-    t.string "name"
-    t.bigint "career_category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["career_category_id"], name: "index_careers_on_career_category_id"
-  end
-
-  create_table "education_center_careers", force: :cascade do |t|
-    t.bigint "education_center_id", null: false
-    t.bigint "career_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["career_id"], name: "index_education_center_careers_on_career_id"
-    t.index ["education_center_id"], name: "index_education_center_careers_on_education_center_id"
-  end
 
   create_table "education_centers", force: :cascade do |t|
     t.string "name"
@@ -45,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_185856) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "enrollments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "education_center_career_id", null: false
@@ -67,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_185856) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+=======
+>>>>>>> 86fd446acac29481ec34ce3ce37a0a94969276e4
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -82,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_185856) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "careers", "career_categories"
   add_foreign_key "education_center_careers", "careers"
   add_foreign_key "education_center_careers", "education_centers"
@@ -90,4 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_185856) do
   add_foreign_key "reviews", "education_center_careers"
   add_foreign_key "reviews", "enrollments"
   add_foreign_key "reviews", "users"
+=======
+>>>>>>> 86fd446acac29481ec34ce3ce37a0a94969276e4
 end
