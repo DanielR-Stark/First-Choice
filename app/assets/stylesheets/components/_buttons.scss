@@ -12,7 +12,8 @@
 	padding: 14px 40px;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #4943F4;
-    }
+
+  }
 
 .myButton:hover {
 	background: inear-gradient(to bottom, #6B64F6 5%, #6B64F6 100%);
@@ -22,4 +23,20 @@
 .myButton:active {
 	position: relative;
 	top: 1px;
+}
+
+.button-education-center {
+  background-color: #6B64F6;
+  border: none;
+  color: white;
+  text-decoration: none;;
+  font-size: 20px;
+  margin: 40px 2px;
+  cursor: pointer;
+  border-radius: 28px;
+  padding: 35px 20px;
+  text-align: center;
+  text-decoration: none;
+
+
 }
