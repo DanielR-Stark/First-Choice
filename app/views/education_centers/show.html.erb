@@ -38,7 +38,7 @@
 
 
   </div>
-  <h4 class ="login">Reviews</h2>
+  <h4 class ="login">Reviews</h4>
   <div class="row">
     <div class="col-md-4">
 
@@ -51,6 +51,17 @@
 <div>
    <%= link_to "Add review", new_education_center_review_path(@educationcenter), class: "myButton" %>
 
+<h2>Carreras</h2>
+<div class="row">
+    <div class="col-md-4">
 
+     <% @educationcenter.careers.each do |career| %>
+    <li class="list-group-item"><%= career.name %> Modalidad: <%= career.modality %>
+    <%= link_to "Eliminar",  career_path(career), data: {turbo_method: :delete, confirm: "Seguro?"} %></li>
+  <% end %>
+</div>
+<div>
+   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter) %>
+</div>
 </div>
 </div>
