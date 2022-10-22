@@ -6,9 +6,34 @@
   <%= simple_form_for  @educationcenter do |f| %>
     <%= f.input :name %>
     <%= f.input :city %>
-    <%= f.input :description %>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.input :description, as: :text %>
+    <%= f.submit class: "myButton" %>
   <% end %>
   <br>
-  <%= link_to "Volver al listado", education_centers_path, class: "btn btn-primary" %>
+  <%= link_to "Volver al listado", education_centers_path, class: "myButton" %>
+
 </div>
+
+
+<div class= "button-container">
+      <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: #6B64F6;">
+          <!-- Grid container -->
+          <div class="footer-container p-4 pb-0">
+            <!-- Section: CTA -->
+            <!-- Section: CTA -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © First Choice
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </section>
+
+
+  </div>
