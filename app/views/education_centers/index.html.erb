@@ -4,7 +4,7 @@
 
 <ul>
   <% @educationcenters.each do |center| %>
-    <li><h1 class= "titulo-education"><%= center.name %></h1> <%= link_to "Ver", education_center_path(center.id) %></li>
+    <h1 class= "titulo-education-center"><%= center.name %></h1> <%= link_to "Ver", education_center_path(center.id) %>
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -33,34 +33,3 @@
 </div>
 
 </Div>
-<div class= "button-container">
-      <section class="">
-        <!-- Footer -->
-        <footer class="text-center text-white" style="background-color: #6B64F6;">
-          <!-- Grid container -->
-          <div class="footer-container p-4 pb-0">
-            <!-- Section: CTA -->
-            <section class="">
-              <p class="d-flex justify-content-center align-items-center">
-                <span class="me-3" style="color: #ffffff">Register for free </span>
-                <!--<button type="button" class="btn btn-outline-light btn-rounded" id="myButton" style="margin: 25px" >-->
-                  <%= link_to "Login", new_user_session_path, class: "myButton" %>
-                <!--</button>-->
-                <%= link_to "Test rapido", new_user_session_path, class: "myButton" %>
-              </p>
-            </section>
-            <!-- Section: CTA -->
-          </div>
-          <!-- Grid container -->
-
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © First Choice
-          </div>
-          <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
-      </section>
-
-
-  </div>
