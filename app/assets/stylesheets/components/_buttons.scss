@@ -12,6 +12,8 @@
 	padding: 14px 40px;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #4943F4;
+  margin-right: 20PX;
+  margin-top: 20px;
 
   }
 
@@ -41,3 +43,39 @@
 
 
 }
+
+
+
+.button-footer{
+  box-shadow: inset 0px 0px 0px 7px #4943F4;
+	background-color: #4943F4;
+	border-radius: 28px;
+	border: 1px solid #4943F4;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 14px 40px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #4943F4
+}
+
+.button-footer:hover {
+	background: inear-gradient(to bottom, #6B64F6 5%, #6B64F6 100%);
+	background-color: #6B64F6;
+  color: #ffffff;}
+
+
+  .button-delete {
+    background-color: #6B64F6;
+    border: none;
+    color: #ffffff;
+    text-decoration: none;;
+    font-size: 20px;
+    padding: 14px 40px;
+    border-radius: 28px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
