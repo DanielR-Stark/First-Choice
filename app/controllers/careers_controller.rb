@@ -1,25 +1,25 @@
 class CareersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  def index
-    @careers = Career.all
-  end
+  before_action :set_education_center, only: %i[new create]
+  before_action :set_career, only: %i[show edit update destroy]
 
   def show
     @career = Career.find(params[:id])
   end
 
   def new
+    @educationcenter = EducationCenter.find(params[:education_center_id])
     @career = Career.new
   end
 
   def edit
+    @career = Career.find(params[:id])
   end
 
   def create
     @career = Career.new(career_params)
-    # @educationcenter.user = current_user
+    @career.education_center = @educationcenter
     if @career.save
-      redirect_to career_path(@career)
+      redirect_to education_center_path(params[:education_center_id])
     else
       render :new
     end
@@ -27,7 +27,7 @@ class CareersController < ApplicationController
 
   def update
     if @career.update(career_params)
-      redirect_to career_path(@career)
+      redirect_to education_center_path(params[:education_center_id])
     else
       render :edit
     end
@@ -36,10 +36,14 @@ class CareersController < ApplicationController
   def destroy
     @career = Career.find(params[:id])
     @career.destroy
-    redirect_to career_path
+    redirect_to education_center_path(@career.education_center)
   end
 
   private
+
+  def set_education_center
+    @educationcenter = EducationCenter.find(params[:education_center_id])
+  end
 
   def set_career
     @career = Career.find(params[:id])
