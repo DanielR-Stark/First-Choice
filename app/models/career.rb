@@ -1,4 +1,3 @@
 class Career < ApplicationRecord
-  belongs_to :career_category
-  has_many :education_center_careers
+  belongs_to :education_center
 end

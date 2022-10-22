@@ -7,3 +7,33 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: inline-block;
 }
+
+
+
+
+
+
+
+
+.login-container{
+  background: url(https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/funktionale-programmierung-t.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+
+.registration-container{
+  background: url(https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/funktionale-programmierung-t.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90vh;
+}
+
+.card-img{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}

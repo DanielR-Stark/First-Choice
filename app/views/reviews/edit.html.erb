@@ -1,0 +1,7 @@
+<h1>Edit Review</h1>
+
+<%= simple_form_for([@educationcenter, @review]) do |f|  %>
+<%= f.input :rating %>
+<%= f.input :statement %>
+<%= f.button :submit %>
+<% end %>

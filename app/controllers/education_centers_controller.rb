@@ -1,4 +1,5 @@
 class EducationCentersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @educationcenters = EducationCenter.all
   end
@@ -11,12 +12,9 @@ class EducationCentersController < ApplicationController
     @educationcenter = EducationCenter.new
   end
 
-  def edit
-  end
-
   def create
     @educationcenter = EducationCenter.new(education_center_params)
-    @educationcenter.user = current_user
+    # @educationcenter.user = current_user
     if @educationcenter.save
       redirect_to education_center_path(@educationcenter)
     else
@@ -24,7 +22,12 @@ class EducationCentersController < ApplicationController
     end
   end
 
+  def edit
+    @educationcenter = EducationCenter.find(params[:id])
+  end
+
   def update
+    @educationcenter = EducationCenter.find(params[:id])
     if @educationcenter.update(education_center_params)
       redirect_to education_center_path(@educationcenter)
     else
@@ -35,7 +38,7 @@ class EducationCentersController < ApplicationController
   def destroy
     @educationcenter = EducationCenter.find(params[:id])
     @educationcenter.destroy
-    redirect_to education_center_path
+    redirect_to education_centers_path
   end
 
   private
@@ -45,6 +48,6 @@ class EducationCentersController < ApplicationController
   end
 
   def education_center_params
-    params.require(:educationcenter).permit(:name, :city, :description)
+    params.require(:education_center).permit(:name, :city, :description)
   end
 end
