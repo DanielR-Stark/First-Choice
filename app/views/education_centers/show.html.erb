@@ -44,10 +44,6 @@
 
 
 
-<h2><%= @educationcenter.name %></h2>
-<p><%= @educationcenter.city %></p>
-<p><%= @educationcenter.description %></p>
-
 <%= link_to "Delete",
   education_center_path(@educationcenter),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary"
