@@ -2,7 +2,9 @@
 <div class="row">
     <div class="col-md-4">
 
-    <%= render @educationcenter.reviews %>
+     <% @educationcenter.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.statement %></li>
+  <% end %>
 
 </div>
 
