@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
     @review.education_center = @educationcenter
     @review.user = current_user
     if @review.save
-      # redirect_to education_center_path(@education_center) -- Need to confirm if we should redirect to this path instead of root
       redirect_to education_center_path(params[:education_center_id])
     else
       render :new
@@ -28,8 +27,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
-    redirect_to education_center_path(params[:education_center_id])
+    redirect_to education_center_path(@review.education_center)
   end
 
   private
