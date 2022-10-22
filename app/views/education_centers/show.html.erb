@@ -1,8 +1,76 @@
-<h2><%= @educationcenter.name %></h2>
-<p><%= @educationcenter.city %></p>
-<p><%= @educationcenter.description %></p>
+<div class= "container">
 
-<%= link_to "Delete",
-  education_center_path(@educationcenter),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <div class ="main-container">
+    <h1 class="login"><%= @educationcenter.name %> </h1><br>
+    <h2 class ="login"><%= @educationcenter.city %></h2>
+    <p class ="parrafos"><%= @educationcenter.description %></p>
+
+  </div>
+
+  <div class ="ctn-tarjetas">
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="login"> Desarrollo Web</h2>
+            <p class="parrafos">Impulsa tu carrera con nuestro curso en Desarrollo web. Aprende a crear aplicaciones web desde cero y consigue el trabajo de tus sueños como desarrollador web con el curso intensivo número uno en el mundo..</p>
+            <img height="420" width="500" src="https://www-img.lewagon.com/UHFwzDxe8Ae8DsOKHT516FORYV5dQ93Fh2haggWCnVE/rs:fill:1000:840/plain/s3://wagon-www/14tm6j8mjp0zyo4vk5h0upq21rrm" alt="minita en el pc">
+            <a href="https://www.lewagon.com/es/web-development-course" class="myButton">Mas información</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="login"> Data Science</h2>
+            <p class="parrafos">Da un giro a tu carrera profesional con nuestro curso de Data Science Explora los fundamentos del Data Science y consigue el trabajo de tus sueños con el curso intensivo número uno del mundo..</p>
+            <img height="420" width="500" src="https://www-img.lewagon.com/QG0NV5COlYabLiH5HuWcsd_E805g3vnbzKPfWNOp-b8/rs:fill:1000:840/plain/s3://wagon-www/4sy2d2fdud1g7rx5e8k1l3c2bwii" alt="minito en el pc">
+
+            <a href="https://www.lewagon.com/es/data-science-course#authors" class="myButton">Mas información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <%= link_to "Delete",
+      education_center_path(@educationcenter),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "myButton"%>
+
+
+</div>
+
+
+<div class= "button-container">
+      <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: #6B64F6;">
+          <!-- Grid container -->
+          <div class="footer-container p-4 pb-0">
+            <!-- Section: CTA -->
+            <section class="">
+              <p class="d-flex justify-content-center align-items-center">
+                <span class="me-3" style="color: #ffffff">Register for free </span>
+                <!--<button type="button" class="btn btn-outline-light btn-rounded" id="myButton" style="margin: 25px" >-->
+                  <%= link_to "Login", new_user_session_path, class: "myButton" %>
+                <!--</button>-->
+                <%= link_to "Test rapido", new_user_session_path, class: "myButton" %>
+              </p>
+            </section>
+            <!-- Section: CTA -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © First Choice
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </section>
+
+
+  </div>
