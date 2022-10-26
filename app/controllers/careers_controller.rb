@@ -5,11 +5,13 @@ class CareersController < ApplicationController
   end
 
   def show
+    authorize @career
     @career = Career.find(params[:id])
   end
 
   def new
     @career = Career.new
+    authorize @career
   end
 
   def edit
@@ -18,6 +20,9 @@ class CareersController < ApplicationController
   def create
     @career = Career.new(career_params)
     # @educationcenter.user = current_user
+
+    authorize @restaurant
+
     if @career.save
       redirect_to career_path(@career)
     else
