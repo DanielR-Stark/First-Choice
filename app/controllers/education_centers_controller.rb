@@ -6,12 +6,13 @@ class EducationCentersController < ApplicationController
   end
 
   def show
-    @educationcenter = EducationCenter.find(params[:id])
     authorize @educationcenter
+    @educationcenter = EducationCenter.find(params[:id])
   end
 
   def new
     @educationcenter = EducationCenter.new
+    authorize @educationcenter
   end
 
   def edit
@@ -20,6 +21,9 @@ class EducationCentersController < ApplicationController
   def create
     @educationcenter = EducationCenter.new(education_center_params)
     # @educationcenter.user = current_user
+
+    authorize @educationcenter
+
     if @educationcenter.save
       redirect_to education_center_path(@educationcenter)
     else
