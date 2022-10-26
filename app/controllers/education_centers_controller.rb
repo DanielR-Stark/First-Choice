@@ -1,11 +1,13 @@
 class EducationCentersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @educationcenters = EducationCenter.all
   end
 
   def show
     @educationcenter = EducationCenter.find(params[:id])
+    authorize @educationcenter
   end
 
   def new
