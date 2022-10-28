@@ -1,20 +1,18 @@
-<div class ="container">
+<div class ="login-container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class  ="card">
+          <h1 class ="login">Crea una Reseña</h1>
 
-<h1 class ="login">Crea una Reseña</h1>
+          <%= simple_form_for [@educationcenter, @review]  do |f| %>
+            <%= f.input :rating, as: :integer %>
+            <%= f.input :statement, as: :text %>
+            <%= f.submit class: "myButton" %>
+          <% end %>
 
-<%= simple_form_for [@educationcenter, @review]  do |f| %>
-  <%= f.input :rating, as: :integer %>
-  <%= f.input :statement, as: :text %>
-  <%= f.submit class: "myButton" %>
-<% end %>
+          <%= link_to "Volver a la academia", education_center_path(params[:education_center_id]), class: "myButton"%>
 
-<%= link_to "Volver a la academia", education_center_path(params[:education_center_id]), class: "myButton"%>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-</div>
+        </div>
+      </div>
+    </div>
+  </div>

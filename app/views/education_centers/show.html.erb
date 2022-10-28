@@ -24,14 +24,18 @@
              <div class="card">
                <div class="card-body">
                   <div class ="ctn-parrafos">
-                  <p class="parrafos"> <%= career.name %></p>
+                  <h3 class="login"> <%= career.name %></h3>
+                  <br>
+                  <br>
                   <p class="parrafos"> <%= career.description %></p>
                   <p class="parrafos"> <%= career.duration %></p>
                   <p class="parrafos"> <%= career.modality %></p>
                   </div>
-                  <DIV class ="card-img-show">
-                    <img  src="https://picsum.photos/200" alt="minita en el pc">
-                  </DIV>
+                  <div class ="card-img-show">
+                    <% images= ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/programador-1921673.jpg","https://tuataras.net/wp-content/uploads/Persona-programando.png","https://st2.depositphotos.com/1017228/9855/i/450/depositphotos_98555688-stock-photo-thoughtful-programmer-coding-in-the.jpg","https://st2.depositphotos.com/1010613/8093/i/600/depositphotos_80939642-stock-photo-man-programming-code-on-computers.jpg","https://ubiqum.com/assets/uploads/2019/03/web-development-java-program-9.jpg","https://thumbs.dreamstime.com/b/el-programador-profesional-joven-que-trabaja-en-la-programaci%C3%B3n-se-convierte-y-p%C3%A1gina-web-un-software-desarrollan-oficina-de-151513145.jpg", "https://distintaslatitudes.net/storage/2020/03/taller-programacio%CC%81n-personas-trans-scaled.jpg","https://internetpasoapaso.com/wp-content/uploads/Visual-BAsic.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTCobfCufxSHlIpjkczGB278ExDRbDRXrHJ72cona4wMOzf6PfUvDOL_FMQdjc7ZJ32I&usqp=CAU","https://www.nosequeestudiar.net/site/assets/files/2440/programadora-haciendo-codigo.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfggdBRnCYxf1jTwI59c6cNSzBJ2FUy29rzvoqiAkjx9M0qCH8FeWG72w2pzJqeCZYa0&usqp=CAU","https://www.criptonoticias.com/wp-content/uploads/2022/05/100-estudiantes-becados-aprender-programar-ethereum-1140x570.jpg","https://i2.wp.com/blog.empleate.com/wp-content/uploads/2020/08/lenguajes_de_programacion_mas_usados.jpg?fit=724%2C483"] %>
+                    <%= image_tag "#{images.sample}", alt: "imagen carreras"  %>
+
+                  </div>
                  <a href="https://www.lewagon.com/es/web-development-course" class="myButton">Mas información</a>
                  <%= link_to "Eliminar",  career_path(career), data: {turbo_method: :delete, confirm: "Seguro?"} %>
 
@@ -43,7 +47,7 @@
   </div>
 
 <div>
-   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter) %>
+   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
 </div>
 
 
