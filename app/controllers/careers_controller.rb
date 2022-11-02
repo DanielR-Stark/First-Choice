@@ -10,6 +10,7 @@ class CareersController < ApplicationController
   end
 
   def new
+    # @educationcenter = EducationCenter.find(params[:id])
     @career = Career.new
     authorize @career
   end
@@ -55,4 +56,8 @@ class CareersController < ApplicationController
   def career_params
     params.require(:career).permit(:name, :description, :duration, :modality, :category)
   end
+
+  # def education_center_params
+  #   params.require(:education_center).permit(:name, :city, :description)
+  # end
 end
