@@ -6,16 +6,27 @@ class EducationCenterPolicy < ApplicationPolicy
      end
   end
 
-
   def show?
     return true
   end
 
   def new?
-    return create?
+    user.admin?
   end
 
   def create?
-    return true
+    user.admin?
+  end
+
+  def edit?
+    user.admin?
+  end
+
+  def update
+    user.admin?
+  end
+
+  def destroy?
+    user.admin?
   end
 end

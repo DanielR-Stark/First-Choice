@@ -42,6 +42,8 @@ class CareersController < ApplicationController
   end
 
   def destroy
+    authorize @career
+
     @career = Career.find(params[:id])
     @career.destroy
     redirect_to career_path

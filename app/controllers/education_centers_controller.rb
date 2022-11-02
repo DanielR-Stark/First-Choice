@@ -6,8 +6,8 @@ class EducationCentersController < ApplicationController
   end
 
   def show
-    authorize @educationcenter
     @educationcenter = EducationCenter.find(params[:id])
+    authorize @educationcenter
   end
 
   def new
