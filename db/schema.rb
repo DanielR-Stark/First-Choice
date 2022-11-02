@@ -18,10 +18,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_001536) do
     t.string "name"
     t.text "description"
     t.text "duration"
-    t.text "modality"
-    t.integer "education_center_id"
+    t.string "modality"
+    t.bigint "education_center_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["education_center_id"], name: "index_careers_on_education_center_id"
   end
 
   create_table "education_centers", force: :cascade do |t|
@@ -37,6 +38,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_001536) do
     t.text "statement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "education_center_id"
+    t.index ["education_center_id"], name: "index_reviews_on_education_center_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,4 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_001536) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "careers", "education_centers"
+  add_foreign_key "reviews", "education_centers"
+  add_foreign_key "reviews", "users"
 end

@@ -1,0 +1,10 @@
+ <h1> Actualizar academia </h1>
+
+  <%= simple_form_for  @educationcenter do |f| %>
+    <%= f.input :name %>
+    <%= f.input :city %>
+    <%= f.input :description, as: :text %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Volver al listado", education_centers_path, class: "btn btn-primary" %>

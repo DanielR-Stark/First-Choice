@@ -4,8 +4,8 @@ class CreateCareers < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :description
       t.text :duration
-      t.text :modality
-      t.integer :education_center_id
+      t.string :modality
+      t.references :education_center, null: false, foreign_key: true
 
       t.timestamps
     end

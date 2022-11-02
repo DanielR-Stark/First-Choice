@@ -15,9 +15,6 @@ class EducationCentersController < ApplicationController
     authorize @educationcenter
   end
 
-  def edit
-  end
-
   def create
     @educationcenter = EducationCenter.new(education_center_params)
     # @educationcenter.user = current_user
@@ -31,7 +28,12 @@ class EducationCentersController < ApplicationController
     end
   end
 
+  def edit
+    @educationcenter = EducationCenter.find(params[:id])
+  end
+
   def update
+    @educationcenter = EducationCenter.find(params[:id])
     if @educationcenter.update(education_center_params)
       redirect_to education_center_path(@educationcenter)
     else
