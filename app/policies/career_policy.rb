@@ -19,15 +19,15 @@ class CareerPolicy < ApplicationPolicy
   end
 
   def edit?
-    return update?
+    user.admin?
   end
 
   def update
-    return record.user_id == user.id
+    user.admin?
   end
 
   def destroy?
-    return record.user == user
+    user.admin?
   end
 
 end
