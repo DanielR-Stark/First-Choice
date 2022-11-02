@@ -15,6 +15,7 @@ class CareersController < ApplicationController
   end
 
   def edit
+    authorize @career
   end
 
   def create
@@ -31,6 +32,7 @@ class CareersController < ApplicationController
   end
 
   def update
+    authorize @career
     if @career.update(career_params)
       redirect_to career_path(@career)
     else

@@ -2,8 +2,7 @@ class EducationCentersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    authorize @educationcenters
-    @educationcenters = EducationCenter.all
+    @educationcenters = policy_scope(EducationCenter)
   end
 
   def show

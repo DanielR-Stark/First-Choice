@@ -11,10 +11,23 @@ class CareerPolicy < ApplicationPolicy
   end
 
   def new?
-    return create?
+    user.admin?
   end
 
   def create?
-    return true
+    user.admin?
   end
+
+  def edit?
+    return update?
+  end
+
+  def update
+    return record.user_id == user.id
+  end
+
+  def destroy?
+    return record.user == user
+  end
+
 end
