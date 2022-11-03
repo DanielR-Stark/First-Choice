@@ -1,6 +1,6 @@
   <h1> Registro de Carrera</h1>
 
-  <% if policy(@career).new? %>
+  <% if policy(Career).create? %>
 
   <%= simple_form_for [@educationcenter, @career]  do |f| %>
     <%= f.input :name %>
