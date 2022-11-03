@@ -29,10 +29,13 @@ class EducationCentersController < ApplicationController
   end
 
   def edit
+    authorize @educationcenter
     @educationcenter = EducationCenter.find(params[:id])
   end
 
   def update
+    authorize @educationcenter
+
     @educationcenter = EducationCenter.find(params[:id])
     if @educationcenter.update(education_center_params)
       redirect_to education_center_path(@educationcenter)
@@ -42,6 +45,8 @@ class EducationCentersController < ApplicationController
   end
 
   def destroy
+    authorize @educationcenter
+
     @educationcenter = EducationCenter.find(params[:id])
     @educationcenter.destroy
     redirect_to education_centers_path
