@@ -5,9 +5,9 @@
     <h2 class ="login"><%= @educationcenter.city %></h2><br>
     <br>
     <p class ="parrafos"><%= @educationcenter.description %></p><br>
-       <%= link_to "Delete",
-      education_center_path(@educationcenter),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>
+
+       <%= link_to "Delete", education_center_path(@educationcenter),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete" if policy(EducationCenter).destroy?%>
   </div>
 
   <div class ="ctn-tarjetas">
@@ -61,7 +61,9 @@
   <% end %>
 </div>
 <div>
+  <% if policy(Career).create? %>
    <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter) %>
+   <% end %>
 </div>
 </div>
 </div>
