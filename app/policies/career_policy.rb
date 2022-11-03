@@ -22,7 +22,7 @@ class CareerPolicy < ApplicationPolicy
     user.admin?
   end
 
-  def update
+  def update?
     user.admin?
   end
 
