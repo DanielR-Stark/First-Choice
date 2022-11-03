@@ -1,11 +1,14 @@
   <h1> Registro de Carrera</h1>
 
+  <% if policy(@career).new? %>
+
   <%= simple_form_for [@educationcenter, @career]  do |f| %>
     <%= f.input :name %>
     <%= f.input :modality %>
     <%= f.input :duration %>
     <%= f.input :description, as: :text %>
     <%= f.submit class: "myButton" %>
+  <% end %>
   <% end %>
   <br>
 <%= link_to "Volver a la academia", education_center_path(params[:education_center_id]) %>
