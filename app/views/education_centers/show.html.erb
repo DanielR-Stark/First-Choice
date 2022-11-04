@@ -44,7 +44,7 @@
 
      <% @educationcenter.reviews.each do |review| %>
     <li class="list-group-item"><%= review.statement %> Rating: <%= review.rating%>
-    <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} %></li>
+    <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} if policy(EducationCenter).destroy? %></li>
   <% end %>
 
 </div>

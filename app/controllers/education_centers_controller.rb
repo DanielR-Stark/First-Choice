@@ -45,10 +45,10 @@ class EducationCentersController < ApplicationController
   end
 
   def destroy
-    authorize @educationcenter
     @educationcenter = EducationCenter.find(params[:id])
+    authorize @educationcenter
     @educationcenter.destroy
-    redirect_to education_centers_path
+    redirect_to education_centers_path(@educationcenters)
   end
 
   private
