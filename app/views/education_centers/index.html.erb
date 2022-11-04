@@ -1,20 +1,25 @@
 <Div class ="container" >
+
 <h1 class ="login">Academias</h1>
-
-
+<div class="row">
+  <div class= "main-container col-9">
 <ul>
   <% @educationcenters.each do |center| %>
-    <h1 class= "titulo-education-center"><%= center.name %></h1> <%= link_to "Ver", education_center_path(center.id) %>
+    <h1 class= "titulo-education-center"> <%= link_to center.name , education_center_path(center.id), class: "link-academia" %></h1>
+
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://www.lewagon.com/default_meta_image.jpg" class="d-block w-100" alt="...">
+             <% images= ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/programador-1921673.jpg","https://tuataras.net/wp-content/uploads/Persona-programando.png","https://st2.depositphotos.com/1017228/9855/i/450/depositphotos_98555688-stock-photo-thoughtful-programmer-coding-in-the.jpg","https://st2.depositphotos.com/1010613/8093/i/600/depositphotos_80939642-stock-photo-man-programming-code-on-computers.jpg","https://ubiqum.com/assets/uploads/2019/03/web-development-java-program-9.jpg","https://thumbs.dreamstime.com/b/el-programador-profesional-joven-que-trabaja-en-la-programaci%C3%B3n-se-convierte-y-p%C3%A1gina-web-un-software-desarrollan-oficina-de-151513145.jpg", "https://distintaslatitudes.net/storage/2020/03/taller-programacio%CC%81n-personas-trans-scaled.jpg","https://internetpasoapaso.com/wp-content/uploads/Visual-BAsic.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTCobfCufxSHlIpjkczGB278ExDRbDRXrHJ72cona4wMOzf6PfUvDOL_FMQdjc7ZJ32I&usqp=CAU","https://www.nosequeestudiar.net/site/assets/files/2440/programadora-haciendo-codigo.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfggdBRnCYxf1jTwI59c6cNSzBJ2FUy29rzvoqiAkjx9M0qCH8FeWG72w2pzJqeCZYa0&usqp=CAU","https://www.criptonoticias.com/wp-content/uploads/2022/05/100-estudiantes-becados-aprender-programar-ethereum-1140x570.jpg","https://i2.wp.com/blog.empleate.com/wp-content/uploads/2020/08/lenguajes_de_programacion_mas_usados.jpg?fit=724%2C483"] %>
+                    <%= image_tag "#{images.sample}", alt: "imagen carreras", class:"imagen-carreras"  %>
           </div>
           <div class="carousel-item">
-            <img src="https://www.canal-ar.com.ar/noticias/images/c_lewagon_150218_r.jpg" class="d-block w-100" alt="...">
+             <% images= ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/programador-1921673.jpg","https://tuataras.net/wp-content/uploads/Persona-programando.png","https://st2.depositphotos.com/1017228/9855/i/450/depositphotos_98555688-stock-photo-thoughtful-programmer-coding-in-the.jpg","https://st2.depositphotos.com/1010613/8093/i/600/depositphotos_80939642-stock-photo-man-programming-code-on-computers.jpg","https://ubiqum.com/assets/uploads/2019/03/web-development-java-program-9.jpg","https://thumbs.dreamstime.com/b/el-programador-profesional-joven-que-trabaja-en-la-programaci%C3%B3n-se-convierte-y-p%C3%A1gina-web-un-software-desarrollan-oficina-de-151513145.jpg", "https://distintaslatitudes.net/storage/2020/03/taller-programacio%CC%81n-personas-trans-scaled.jpg","https://internetpasoapaso.com/wp-content/uploads/Visual-BAsic.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTCobfCufxSHlIpjkczGB278ExDRbDRXrHJ72cona4wMOzf6PfUvDOL_FMQdjc7ZJ32I&usqp=CAU","https://www.nosequeestudiar.net/site/assets/files/2440/programadora-haciendo-codigo.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfggdBRnCYxf1jTwI59c6cNSzBJ2FUy29rzvoqiAkjx9M0qCH8FeWG72w2pzJqeCZYa0&usqp=CAU","https://www.criptonoticias.com/wp-content/uploads/2022/05/100-estudiantes-becados-aprender-programar-ethereum-1140x570.jpg","https://i2.wp.com/blog.empleate.com/wp-content/uploads/2020/08/lenguajes_de_programacion_mas_usados.jpg?fit=724%2C483"] %>
+                    <%= image_tag "#{images.sample}", alt: "imagen carreras", class:"imagen-carreras"  %>
           </div>
           <div class="carousel-item">
-            <img src="https://dwj199mwkel52.cloudfront.net/assets/core/social/events-global-card-5719bfa51f5b5457624fb646de65a3d7de48c3a1f37bd0631264f0c72a121737.jpg" class="d-block w-100" alt="...">
+             <% images= ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/programador-1921673.jpg","https://tuataras.net/wp-content/uploads/Persona-programando.png","https://st2.depositphotos.com/1017228/9855/i/450/depositphotos_98555688-stock-photo-thoughtful-programmer-coding-in-the.jpg","https://st2.depositphotos.com/1010613/8093/i/600/depositphotos_80939642-stock-photo-man-programming-code-on-computers.jpg","https://ubiqum.com/assets/uploads/2019/03/web-development-java-program-9.jpg","https://thumbs.dreamstime.com/b/el-programador-profesional-joven-que-trabaja-en-la-programaci%C3%B3n-se-convierte-y-p%C3%A1gina-web-un-software-desarrollan-oficina-de-151513145.jpg", "https://distintaslatitudes.net/storage/2020/03/taller-programacio%CC%81n-personas-trans-scaled.jpg","https://internetpasoapaso.com/wp-content/uploads/Visual-BAsic.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTCobfCufxSHlIpjkczGB278ExDRbDRXrHJ72cona4wMOzf6PfUvDOL_FMQdjc7ZJ32I&usqp=CAU","https://www.nosequeestudiar.net/site/assets/files/2440/programadora-haciendo-codigo.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfggdBRnCYxf1jTwI59c6cNSzBJ2FUy29rzvoqiAkjx9M0qCH8FeWG72w2pzJqeCZYa0&usqp=CAU","https://www.criptonoticias.com/wp-content/uploads/2022/05/100-estudiantes-becados-aprender-programar-ethereum-1140x570.jpg","https://i2.wp.com/blog.empleate.com/wp-content/uploads/2020/08/lenguajes_de_programacion_mas_usados.jpg?fit=724%2C483"] %>
+                    <%= image_tag "#{images.sample}", alt: "imagen carreras", class:"imagen-carreras"  %>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -28,6 +33,22 @@
       </div>
   <% end %>
 </ul>
+
+  </div>
+
+<div class=" image-container col-3">
+  <div style="position: relative; width: 100%; height: 0; padding-top: 250.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFJxHuhr6E&#x2F;view?embed">
+  </iframe>
+</div>
+
+</div>
+
+</div>
+
 <div class ="ctn-boton">
 
 <% if policy(EducationCenter).create? %>

@@ -23,6 +23,28 @@
   height: 100vh;
 }
 
+.educationcenter-container{
+  background: url(https://www.incimages.com/uploaded_files/image/1920x1080/software-computer-code-1940x900_35196.jpg
+  ) ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  filter: blur(8px);
+
+}
+
+.ctn-educacioncenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-82%,-59%);
+  margin: 0
+
+}
+.master-ctn{
+  position: relative;
+}
 
 .registration-container{
   background: url(https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/funktionale-programmierung-t.jpg);
@@ -36,4 +58,26 @@
   width: 100%;
   height: 100%;
   align-items: center;
+}
+
+
+.titulo-academias {
+  color: #021859;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 15px;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: inline-block;
+
+}
+
+
+.link-academia{
+  text-decoration: none;
+  color: #6B64F6;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
 }
