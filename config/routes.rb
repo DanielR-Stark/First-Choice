@@ -5,8 +5,12 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     resources :careers, only: [:new, :create]
   end
-  resources :careers, only: [:destroy, :edit]
-  resources :reviews, only: [:destroy]
+
+  resources :quizzes do
+    resources :questions do
+      resources :resultados, only: [:show]
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
