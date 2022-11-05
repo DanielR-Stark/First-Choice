@@ -1,11 +1,15 @@
 class QuizzesController < ApplicationController
   def new
     @quiz = Quiz.new
+    authorize @quiz
   end
 
   def create
     @quiz = Quiz.new
     @quiz.user = current_user
+
+    authorize @quiz
+
     if @quiz.save
       redirect_to new_quiz_question_path(@quiz.id)
     else
