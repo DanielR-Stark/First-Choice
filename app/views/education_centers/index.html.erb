@@ -60,9 +60,10 @@
 </div>
 
 <div class ="ctn-boton">
+
+<% if policy(EducationCenter).create? %>
 <%= link_to "Agregar nueva academia" , new_education_center_path, class: "myButton"%>
-<br>
-<br>
+<% end %>
 </div>
 
 </Div>

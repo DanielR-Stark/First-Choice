@@ -5,12 +5,16 @@ class ReviewsController < ApplicationController
   def new
     @educationcenter = EducationCenter.find(params[:education_center_id])
     @review = Review.new
+    authorize @review
   end
 
   def create
     @review = Review.new(review_params)
     @review.education_center = @educationcenter
     @review.user = current_user
+
+    authorize @review
+
     if @review.save
       redirect_to education_center_path(params[:education_center_id])
     else
@@ -19,6 +23,8 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    authorize @review
+
     if @review.update(review_params)
       redirect_to education_center_path(params[:education_center_id])
     else
@@ -27,6 +33,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    authorize @review
+
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to education_center_path(@review.education_center)

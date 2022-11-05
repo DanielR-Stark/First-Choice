@@ -1,20 +1,26 @@
 class EducationCentersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @educationcenters = EducationCenter.all
+    @educationcenters = policy_scope(EducationCenter)
   end
 
   def show
     @educationcenter = EducationCenter.find(params[:id])
+    authorize @educationcenter
   end
 
   def new
     @educationcenter = EducationCenter.new
+    authorize @educationcenter
   end
 
   def create
     @educationcenter = EducationCenter.new(education_center_params)
     # @educationcenter.user = current_user
+
+    authorize @educationcenter
+
     if @educationcenter.save
       redirect_to education_center_path(@educationcenter)
     else
@@ -23,10 +29,13 @@ class EducationCentersController < ApplicationController
   end
 
   def edit
+    authorize @educationcenter
     @educationcenter = EducationCenter.find(params[:id])
   end
 
   def update
+    authorize @educationcenter
+
     @educationcenter = EducationCenter.find(params[:id])
     if @educationcenter.update(education_center_params)
       redirect_to education_center_path(@educationcenter)
@@ -37,8 +46,9 @@ class EducationCentersController < ApplicationController
 
   def destroy
     @educationcenter = EducationCenter.find(params[:id])
+    authorize @educationcenter
     @educationcenter.destroy
-    redirect_to education_centers_path
+    redirect_to education_centers_path(@educationcenters)
   end
 
   private

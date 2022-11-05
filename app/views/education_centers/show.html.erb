@@ -5,23 +5,25 @@
     <h2 class ="login"><%= @educationcenter.city %></h2><br>
     <br>
     <p class ="parrafos"><%= @educationcenter.description %></p><br>
-       <%= link_to "Delete",
-      education_center_path(@educationcenter),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>
+
+       <%= link_to "Delete", education_center_path(@educationcenter),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete" if policy(EducationCenter).destroy?%>
   </div>
 <br>
 <br>
   <h1 class ="login">Carreras</h1>
 
-
   <div class="row">
     <div>
-
-
 
      <div class ="ctn-tarjetas1">
       <h2 class="login"> <% @educationcenter.careers.each do |career| %></h2>
 
+     <% @educationcenter.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.statement %> Rating: <%= review.rating%>
+    <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} if policy(EducationCenter).destroy? %></li>
+  <% end %>
+             <div class="card">
              <div class="card2">
                <div class="card-body">
                   <div class ="ctn-parrafos69">
@@ -36,6 +38,14 @@
                     <%= image_tag "#{images.sample}", alt: "imagen carreras", class:"card-img-left69"  %>
 
                   </div>
+                 <a href="https://www.lewagon.com/es/web-development-course" class="myButton">Mas información</a>
+
+                 <% if policy(Career).destroy? %>
+
+                 <%= link_to "Eliminar",  career_path(career), data: {turbo_method: :delete, confirm: "Seguro?"} %>
+
+                 <% end %>
+
                   <br>
                   <br>
 
@@ -44,17 +54,14 @@
                  <br>
                   </div>
                 </div>
-
     <% end %>
     </div>
   </div>
-
 <div>
-<br>
-<br>
-   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
+  <% if policy(Career).create? %>
+      <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
 </div>
-
+   <% end %>
 
       </div>
       <br>
