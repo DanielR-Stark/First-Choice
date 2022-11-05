@@ -110,6 +110,31 @@ p {
   margin-left:300px ;
   margin-right: 300px;
 }
+
+
+.container2{
+height: 400px;
+background-image: url(https://as1.ftcdn.net/v2/jpg/02/21/97/86/1000_F_221978639_EyPBA9tuscYhW6rhaO5EiVzdG8hvQSgV.jpg);
+
+background-size: cover;
+background-position: center;
+
+
+}
+
+
+.container3{
+  margin-left: 300px;
+  margin-right: 300px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
 .p-cards1{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 17px;
@@ -161,3 +186,36 @@ p {
   text-align: left;
   margin-right: 30px;
   }
+
+
+
+.p-preguntas{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  word-spacing: 2px;
+  color: #ffffff;
+  font-weight: lighter;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-variant: normal;
+  text-transform: none;
+  text-align: left;
+  margin-left: 20px;
+
+}
+
+
+
+.p-preguntas1{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: lighter;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-variant: normal;
+  text-transform: none;
+  text-align: left;
+  margin-left: 20px;
+}
