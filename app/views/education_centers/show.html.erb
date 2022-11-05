@@ -48,7 +48,7 @@
   <h3 class ="login">Reviews</h3>
   <% @educationcenter.reviews.each do |review| %>
     <li class="list-group-item"><p><%= review.statement %> Rating: <%= review.rating%></p>
-    <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} %>
+
     </li>
   <% end %>
   <div class ="btn-review">
