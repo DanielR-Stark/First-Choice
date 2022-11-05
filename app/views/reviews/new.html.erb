@@ -5,7 +5,8 @@
           <h1 class ="login">Crea una Reseña</h1>
 
           <%= simple_form_for [@educationcenter, @review]  do |f| %>
-            <%= f.input :rating, as: :integer %>
+
+            <%= f.input :rating, as: :integer  %>
             <%= f.input :statement, as: :text %>
             <%= f.submit class: "myButton" %>
           <% end %>
