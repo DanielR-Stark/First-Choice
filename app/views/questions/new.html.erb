@@ -1,8 +1,15 @@
 <h1>Test de gustos y habilidades</h1>
 <h2>Ingresa del 1 a 5, siendo el 1 que no tes gusta nada y 5 que te gusta mucho</h2>
 <%= simple_form_for [@quiz, @question]  do |f| %>
-  <a>Cuanto te gusta el front?<%= f.input :p1, as: :integer %></a>
-  <a>Cuanto te gusta el fullstack?<%= f.input :p2, as: :integer %></a>
-  <a>Cuanto te gusta las ciencias de datos?<%= f.input :p3, as: :integer %></a>
-  <%= f.submit %>
+  <a>Me gusta ordenar mi ropa por forma y tamaños<%= f.input :p1, as: :integer %></a>
+  <a>A la hora de cocinar te fijas en la presentación de la comida<%= f.input :p2, as: :integer %></a>
+  <a>Prefieres la funcionalidad por encima de la presentación<%= f.input :p3, as: :integer %></a>
+  <a>Te gusta analizar y resolver desafios complejos<%= f.input :p4, as: :integer %></a>
+  <a>Cuando sales con tus amigos te gusta analizar todo<%= f.input :p5, as: :integer %></a>
+  <a>Eres bueno con los números<%= f.input :p6, as: :integer %></a>
+  <a>Frente a un problema matematico no descansas hasta resolverlo<%= f.input :p7, as: :integer %></a>
+  <a>Te preocupan las tendencias actuales y no puedes vivir sin el celular<%= f.input :p8, as: :integer %></a>
+  <a>Eres una persona interesada por la inteligencia articial<%= f.input :p9, as: :integer %></a>
+  <a>Te gusta ser parte de todo el proceso cuando tienes un proyecto<%= f.input :p10, as: :integer %></a>
+  <%= f.button :submit, "Ver mis resultados", class: "myButton" %>
 <% end %>

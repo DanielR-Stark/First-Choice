@@ -9,6 +9,14 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @back = @question
+    @front = @question
+    @cd = @question
+    @apps = @question
+    @full = @question
+    @organizador = []
+    @vec = []
+    @final = []
     @question.quiz = @quiz
     if @question.save
       redirect_to quiz_question_path(params[:quiz_id], @question)
