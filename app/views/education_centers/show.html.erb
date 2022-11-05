@@ -13,11 +13,8 @@
 <br>
   <h1 class ="login">Carreras</h1>
 
-
   <div class="row">
     <div>
-
-
 
      <div class ="ctn-tarjetas1">
       <h2 class="login"> <% @educationcenter.careers.each do |career| %></h2>
@@ -42,22 +39,23 @@
 
                   </div>
                  <a href="https://www.lewagon.com/es/web-development-course" class="myButton">Mas información</a>
+
+                 <% if policy(Career).destroy? %>
+
                  <%= link_to "Eliminar",  career_path(career), data: {turbo_method: :delete, confirm: "Seguro?"} %>
+
+                 <% end %>
 
                   </div>
                 </div>
-
     <% end %>
     </div>
   </div>
-
 <div>
   <% if policy(Career).create? %>
       <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
 </div>
    <% end %>
-
-
 
       </div>
   <h4 class ="login">Reviews</h4>
