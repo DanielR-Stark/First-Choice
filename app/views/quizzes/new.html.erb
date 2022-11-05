@@ -1,4 +1,55 @@
-<h1>Realizar el test<h1>
-<%= simple_form_for  @quiz do |f| %>
-  <%= f.submit class: "myButton" %>
-<% end %>
+
+<div class ="container-quiz">
+  <h1 class ="h1-quiz">Test de Orientación Vocacional</h1>
+  <p class ="p-quiz"> Si a menudo te preguntas cómo saber qué carrera elegir,  estamos aquí para ayudarte. <br>
+  Nuestro Test Vocacional te ayuda a descubrir qué camino de la programación es la mejor para ti. <br> Utilizamos
+  una serie de preguntas para evaluar tus rasgos de personalidad además de tus  tus preferencias <br>
+   e igualmente relacionamos tus intereses con las carreras que tienen los mejores bootcamps del mundo.
+  <br> Los cuales podras apreciar una vez termines el test.</p>
+  <h4 class="h1-quiz">Inicia el proceso dando click acá</h4>
+  <%= simple_form_for  @quiz do |f| %>
+    <%= f.button :submit, "Tomar Test", class: "myButton-quiz" %>
+  <% end %>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+ <div class ="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card-quiz" style="width: 18rem;">
+          <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/7543/7543180.png" alt="Card image cap">
+        <div class="card-body">
+        <br>
+          <p class="card-text"> Es gratis y solo te toma unos minutos</p>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card-quiz" style="width: 18rem;">
+          <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/8866/8866512.png" alt="Card image cap">
+        <div class="card-body">
+          <br>
+          <p class="card-text">Actualizado con los mejores resultados para ti, en los cuales tuvimos en cuenta
+          los mejores centros de estudio del mundo. </p>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card-quiz" style="width: 18rem;">
+          <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/2827/2827256.png" alt="Card image cap">
+        <div class="card-body">
+          <br>
+          <p class="card-text"> Recuerda Ser sincero y responder con calma, Recuerda que no hay preguntas incorrectas</p>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>

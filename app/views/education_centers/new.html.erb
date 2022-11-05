@@ -1,39 +1,32 @@
 <!--Registro academia -->
-<div class="container">
-
-  <h1> Registro de Academia</h1>
-
-  <%= simple_form_for  @educationcenter do |f| %>
-    <%= f.input :name %>
-    <%= f.input :city %>
-    <%= f.input :description, as: :text %>
-    <%= f.submit class: "myButton" %>
-  <% end %>
-  <br>
-  <%= link_to "Volver al listado", education_centers_path, class: "myButton" %>
-
-</div>
-
-
-<div class= "button-container">
-      <section class="">
-        <!-- Footer -->
-        <footer class="text-center text-white" style="background-color: #6B64F6;">
-          <!-- Grid container -->
-          <div class="footer-container p-4 pb-0">
-            <!-- Section: CTA -->
-            <!-- Section: CTA -->
-          </div>
-          <!-- Grid container -->
-
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © First Choice
-          </div>
-          <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
-      </section>
-
+<div class= "master-ctn">
+  <div class ="educationcenter-container">
 
   </div>
+
+
+
+<div class ="ctn-educacioncenter">
+<div class="row d-flex justify-content-center">
+      <div class="col-md-4">
+        <div class  ="card">
+            <h1 class ="login"> Registro de Academia</h1>
+
+            <%= simple_form_for  @educationcenter do |f| %>
+              <%= f.input :name %>
+              <%= f.input :city %>
+              <%= f.input :description, as: :text %>
+              <%= f.submit class: "myButton" %>
+            <% end %>
+            <br>
+            <%= link_to "Volver al listado", education_centers_path, class: "myButton" %>
+            <br>
+            <br>
+
+            <br>
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>
