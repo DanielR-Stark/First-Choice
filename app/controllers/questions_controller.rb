@@ -2,14 +2,20 @@ class QuestionsController < ApplicationController
   before_action :set_quiz, only: %i[new create]
   before_action :set_question, only: %i[show edit update destroy]
 
+  def show
+    authorize @question
+  end
+
   def new
     @quiz = Quiz.find(params[:quiz_id])
     @question = Question.new
+    authorize @question
   end
 
   def create
     @question = Question.new(question_params)
     @question.quiz = @quiz
+    authorize @question
     if @question.save
       redirect_to quiz_question_path(params[:quiz_id], @question)
     else
