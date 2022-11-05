@@ -1,26 +1,52 @@
-<h1>Tus resultados son:</h1>
-<br>
+
 <% back = @question.p3 + @question.p4 + @question.p6 %>
 <% front = @question.p1 + @question.p2 + @question.p4 %>
 <% full = @question.p4 + @question.p7 + @question.p10 %>
 <% cd = @question.p5 + @question.p6 + @question.p9 %>
 <% apps = @question.p8 + @question.p10 + @question.p4 %>
 <% @vec = [[back, "DESARROLLADOR BACKEND"], [ front, "DESARROLLADOR FRONTEND"], [full, "DESARROLLADOR FULLSTACK"], [apps, "DESARROLLADOR DE APPS MOVILES"], [cd, "CIENCIA DE DATOS"]] %>
-<br>
 <% @organizador = @vec.sort_by {|z| z.first} %>
-<br>
 <% @final = @organizador.map(&:last) %>
-<br>
-<a>PRIMER PUESTO</a>
-<br>
-<a> Tu MEJOR opción es </a><%= @final[4]  %>
-<br>
-<br>
-<a>SEGUNDO PUESTO</a>
-<br>
-<a> Tu SEGUNDA opción es </a><%= @final[3]  %>
-<br>
-<br>
-<a>TERCER PUESTO</a>
-<br>
-<a> Tu TERCERA opción es </a><%= @final[2]  %>
+
+<div class="container1">
+  <div class ="titulo-resultados">
+
+    <h1 class ="h1-resultados">Felicidades, has terminado el Test</h1>
+    <br>
+    <br>
+
+    <p class="p-resultados"> Para nosotros ha sido un placer acompañarte en tu  First Choice esperamos haberte ayudado en tu camino.
+    No olvides regresar para dejar una reseña de los centros educativos. Además, Recuerda compartirle a todos tus conocidos la plataforma en caso que quieran ingresar al mundo tecnologico y no sepan por donde empezar, asi construiremos una comunidad mucho mas grande. Haz click en la medalla para mas info.</p>
+
+  </div>
+
+
+
+<div class="card-group">
+  <div class="card-bronce">
+    <img class="card-img-top" src="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f949.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Tercer puesto</h5>
+      <p class="card-text"></a><%= @final[2]  %></p>
+      <%= link_to "Ver academias", education_centers_path, class: "myButton" %>
+    </div>
+  </div>
+  <div class="card-oro">
+    <img class="card-img-top" src="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f947.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Primer puesto</h5>
+      <p class="card-text"> </a><%= @final[4]  %></p>
+      <%= link_to "Ver academias", education_centers_path, class: "myButton" %>
+
+    </div>
+  </div>
+  <div class="card-plata">
+    <img class="card-img-top" src="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f948.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Segundo puesto </h5>
+      <p class="card-text"></a><%= @final[3]  %></p>
+      <%= link_to "Ver academias", education_centers_path, class: "myButton" %>
+    </div>
+  </div>
+</div>
+</div>
