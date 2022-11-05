@@ -1,8 +1,54 @@
-<h1>Test de gustos y habilidades</h1>
-<h2>Ingresa del 1 a 5, siendo el 1 que no tes gusta nada y 5 que te gusta mucho</h2>
-<%= simple_form_for [@quiz, @question]  do |f| %>
-  <a>Cuanto te gusta el front?<%= f.input :p1, as: :integer %></a>
-  <a>Cuanto te gusta el fullstack?<%= f.input :p2, as: :integer %></a>
-  <a>Cuanto te gusta las ciencias de datos?<%= f.input :p3, as: :integer %></a>
-  <%= f.submit %>
-<% end %>
+<div class ="container2">
+  <div class ="card-quizes42069">
+
+
+    <br>
+    <h1 class ="h1-test" >Test de afinidad</h1>
+    <br>
+    <p class ="p-test">Responde del 1 al 5</p>
+    <p class="p-test"> Siendo 1  la respuesta con menos afinidad y 5 la que más</p>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="container3">
+  <div class ="row">
+  <%= simple_form_for [@quiz, @question]  do |f| %>
+    <div class="card-preguntas">
+      <p class ="p-preguntas"> Me gusta ordenar mi ropa por forma y tamaños  <br> <%= f.input :p1, as: :integer %></p>
+    </div>
+    <div class="card-preguntas1">
+      <p class ="p-preguntas1">A la hora de cocinar te fijas en la presentación de la comida<%= f.input :p2, as: :integer %></p>
+    </div>
+     <div class="card-preguntas">
+      <p class ="p-preguntas">Prefieres la funcionalidad por encima de la presentación<%= f.input :p3, as: :integer %></p>
+    </div>
+    <div class="card-preguntas1">
+      <p class ="p-preguntas1" >Te gusta analizar y resolver desafios complejos<%= f.input :p4, as: :integer %></p>
+    </div>
+    <div class="card-preguntas">
+      <p class ="p-preguntas">Cuando sales con tus amigos te gusta analizar todo<%= f.input :p5, as: :integer %></p>
+    </div>
+    <div class="card-preguntas1">
+      <p class ="p-preguntas1">Eres bueno con los números<%= f.input :p6, as: :integer %></p>
+    </div>
+    <div class="card-preguntas">
+      <p class ="p-preguntas">Frente a un problema matematico no descansas hasta resolverlo<%= f.input :p7, as: :integer %></p>
+    </div>
+    <div class="card-preguntas1">
+      <p class ="p-preguntas1">Te preocupan las tendencias actuales y no puedes vivir sin el celular<%= f.input :p8, as: :integer %></p>
+    </div>
+    <div class="card-preguntas">
+      <p class ="p-preguntas">Eres una persona interesada por la inteligencia articial<%= f.input :p9, as: :integer %></p>
+    </div>
+    <div class="card-preguntas1">
+      <p class ="p-preguntas1">Te gusta ser parte de todo el proceso cuando tienes un proyecto<%= f.input :p10, as: :integer %></p>
+    </div>
+
+    <div class="ctn-btn-quiz">
+      <%= f.button :submit, "Ver mis resultados", class: "myButton" %>
+      <% end %>
+    </div>
+  </div>
+</div>

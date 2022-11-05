@@ -1,67 +1,26 @@
 <h1>Tus resultados son:</h1>
-
 <br>
-
-<% if @question.p1 > @question.p2 && @question.p1 > @question.p3 %>
-  <a> Tu MEJOR opción es FRONT</a>
-<% end %>
-
-<% if @question.p2 > @question.p1 && @question.p2 > @question.p3 %>
-  <a> Tu MEJOR opción es FULLSTACK</a>
-<% end %>
-
-<% if @question.p3 > @question.p2 && @question.p3 > @question.p1 %>
-  <a> Tu MEJOR opción es CIENCIA DE DATOS</a>
-<% end %>
-
+<% back = @question.p3 + @question.p4 + @question.p6 %>
+<% front = @question.p1 + @question.p2 + @question.p4 %>
+<% full = @question.p4 + @question.p7 + @question.p10 %>
+<% cd = @question.p5 + @question.p6 + @question.p9 %>
+<% apps = @question.p8 + @question.p10 + @question.p4 %>
+<% @vec = [[back, "DESARROLLADOR BACKEND"], [ front, "DESARROLLADOR FRONTEND"], [full, "DESARROLLADOR FULLSTACK"], [apps, "DESARROLLADOR DE APPS MOVILES"], [cd, "CIENCIA DE DATOS"]] %>
 <br>
-
-<% if @question.p1 > @question.p2 && @question.p2 > @question.p3 %>
-  <a> Tu SEGUNDA opción es FULLSTACK</a>
-<% end %>
-
-<% if @question.p3 > @question.p2 && @question.p2 > @question.p1 %>
-  <a> Tu SEGUNDA opción es FULLSTACK</a>
-<% end %>
-
-<% if @question.p2 > @question.p1 && @question.p1 > @question.p3 %>
-  <a> Tu SEGUNDA opción es FRONT</a>
-<% end %>
-
-<% if @question.p3 > @question.p1 && @question.p1 > @question.p2 %>
-  <a> Tu SEGUNDA opción es FRONT</a>
-<% end %>
-
-<% if @question.p1 > @question.p3 && @question.p3 > @question.p2 %>
-  <a> Tu SEGUNDA opción es CIENCIA DE DATOS</a>
-<% end %>
-
-<% if @question.p2 > @question.p3 && @question.p3 > @question.p1 %>
-  <a> Tu SEGUNDA opción es CIENCIA DE DATOS</a>
-<% end %>
-
+<% @organizador = @vec.sort_by {|z| z.first} %>
 <br>
-
-<% if @question.p3 > @question.p2 && @question.p2 > @question.p1 %>
-  <a> Tu TERCERA opción es FRONT</a>
-<% end %>
-
-<% if @question.p2 > @question.p3 && @question.p3 > @question.p1 %>
-  <a> Tu TERCERA opción es FRONT</a>
-<% end %>
-
-<% if @question.p3 > @question.p1 && @question.p1 > @question.p2 %>
-  <a> Tu TERCERA opción es FULLSTACK</a>
-<% end %>
-
-<% if @question.p1 > @question.p3 && @question.p3 > @question.p2 %>
-  <a> Tu TERCERA opción es FULLSTACK</a>
-<% end %>
-
-<% if @question.p1 > @question.p2 && @question.p2 > @question.p3 %>
-  <a> Tu TERCERA opción es CIENCAS DE DATOS</a>
-<% end %>
-
-<% if @question.p2 > @question.p1 && @question.p1 > @question.p3 %>
-  <a> Tu TERCERA opción es CIENCIAS DE DATOS</a>
-<% end %>
+<% @final = @organizador.map(&:last) %>
+<br>
+<a>PRIMER PUESTO</a>
+<br>
+<a> Tu MEJOR opción es </a><%= @final[4]  %>
+<br>
+<br>
+<a>SEGUNDO PUESTO</a>
+<br>
+<a> Tu SEGUNDA opción es </a><%= @final[3]  %>
+<br>
+<br>
+<a>TERCER PUESTO</a>
+<br>
+<a> Tu TERCERA opción es </a><%= @final[2]  %>
