@@ -5,4 +5,16 @@ class TestPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def show?
+    return true
+  end
+
+  def new?
+    record.user == user
+  end
+
+  def create?
+    record.user == user
+  end
 end
