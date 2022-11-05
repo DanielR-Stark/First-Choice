@@ -1,34 +1,24 @@
 <div class= "container">
-
   <div class ="main-container">
     <h1 class="login"><%= @educationcenter.name %> </h1><br>
     <h2 class ="login"><%= @educationcenter.city %></h2><br>
     <br>
     <p class ="parrafos"><%= @educationcenter.description %></p><br>
-
-       <%= link_to "Delete", education_center_path(@educationcenter),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete" if policy(EducationCenter).destroy?%>
+       <%= link_to "Delete",
+      education_center_path(@educationcenter),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>
   </div>
 <br>
 <br>
   <h1 class ="login">Carreras</h1>
-
   <div class="row">
     <div>
-
      <div class ="ctn-tarjetas1">
       <h2 class="login"> <% @educationcenter.careers.each do |career| %></h2>
-
-     <% @educationcenter.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.statement %> Rating: <%= review.rating%>
-    <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} if policy(EducationCenter).destroy? %></li>
-  <% end %>
-             <div class="card">
              <div class="card2">
                <div class="card-body">
                   <div class ="ctn-parrafos69">
                   <h3 class="h-cards2"> <%= career.name %></h3>
-
                   <p class="p-cards2"> <%= career.description %></p>
                   <p class="p-cards2"> <%= career.duration %></p>
                   <p class="p-cards2"> <%= career.modality %></p>
@@ -36,19 +26,9 @@
                   <div class ="card-img-show">
                     <% images= ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/programador-1921673.jpg","https://tuataras.net/wp-content/uploads/Persona-programando.png","https://st2.depositphotos.com/1017228/9855/i/450/depositphotos_98555688-stock-photo-thoughtful-programmer-coding-in-the.jpg","https://st2.depositphotos.com/1010613/8093/i/600/depositphotos_80939642-stock-photo-man-programming-code-on-computers.jpg","https://ubiqum.com/assets/uploads/2019/03/web-development-java-program-9.jpg","https://thumbs.dreamstime.com/b/el-programador-profesional-joven-que-trabaja-en-la-programaci%C3%B3n-se-convierte-y-p%C3%A1gina-web-un-software-desarrollan-oficina-de-151513145.jpg", "https://distintaslatitudes.net/storage/2020/03/taller-programacio%CC%81n-personas-trans-scaled.jpg","https://internetpasoapaso.com/wp-content/uploads/Visual-BAsic.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTCobfCufxSHlIpjkczGB278ExDRbDRXrHJ72cona4wMOzf6PfUvDOL_FMQdjc7ZJ32I&usqp=CAU","https://www.nosequeestudiar.net/site/assets/files/2440/programadora-haciendo-codigo.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfggdBRnCYxf1jTwI59c6cNSzBJ2FUy29rzvoqiAkjx9M0qCH8FeWG72w2pzJqeCZYa0&usqp=CAU","https://www.criptonoticias.com/wp-content/uploads/2022/05/100-estudiantes-becados-aprender-programar-ethereum-1140x570.jpg","https://i2.wp.com/blog.empleate.com/wp-content/uploads/2020/08/lenguajes_de_programacion_mas_usados.jpg?fit=724%2C483"] %>
                     <%= image_tag "#{images.sample}", alt: "imagen carreras", class:"card-img-left69"  %>
-
                   </div>
-                 <a href="https://www.lewagon.com/es/web-development-course" class="myButton">Mas información</a>
-
-                 <% if policy(Career).destroy? %>
-
-                 <%= link_to "Eliminar",  career_path(career), data: {turbo_method: :delete, confirm: "Seguro?"} %>
-
-                 <% end %>
-
                   <br>
                   <br>
-
                  <a href="https://www.lewagon.com/es/web-development-course" class="myButton420" target="blank">Mas información</a>
                  <br>
                  <br>
@@ -58,11 +38,10 @@
     </div>
   </div>
 <div>
-  <% if policy(Career).create? %>
-      <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
+<br>
+<br>
+   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
 </div>
-   <% end %>
-
       </div>
       <br>
       <br>
@@ -72,7 +51,6 @@
     <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} %>
     </li>
   <% end %>
-
   <div class ="btn-review">
     <%= link_to "Add review", new_education_center_review_path(@educationcenter), class: "myButton" %>
     <br>
