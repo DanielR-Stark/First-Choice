@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :quizzes do
-    resources :questions, only: [:index, :new, :create]
-    resources :resultados, only: [:show]
+    resources :questions do
+      resources :resultados, only: [:show]
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

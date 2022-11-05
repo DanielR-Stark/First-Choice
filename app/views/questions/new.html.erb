@@ -2,7 +2,7 @@
 <h2>Ingresa del 1 a 5, siendo el 1 que no tes gusta nada y 5 que te gusta mucho</h2>
 <%= simple_form_for [@quiz, @question]  do |f| %>
   <a>Cuanto te gusta el front?<%= f.input :p1, as: :integer %></a>
-  <a>Cuanto te gusta el fullstack?<%= f.input :p1, as: :integer %></a>
-  <a>Cuanto te gusta las ciencias de datos?<%= f.input :p1, as: :integer %></a>
+  <a>Cuanto te gusta el fullstack?<%= f.input :p2, as: :integer %></a>
+  <a>Cuanto te gusta las ciencias de datos?<%= f.input :p3, as: :integer %></a>
   <%= f.submit %>
 <% end %>

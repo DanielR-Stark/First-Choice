@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.quiz = @quiz
     if @question.save
-      redirect_to root_path
+      redirect_to quiz_question_path(params[:quiz_id], @question)
     else
       render :new
     end
