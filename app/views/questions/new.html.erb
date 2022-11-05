@@ -1,0 +1,5 @@
+<h1>Test de gustos y habilidades<h1>
+<%= simple_form_for [@quiz, @question]  do |f| %>
+  <a>Cuanto te gusta el pan?<%= f.input :respuesta, as: :integer %></a>
+  <%= f.submit %>
+<% end %>
