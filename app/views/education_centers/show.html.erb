@@ -1,12 +1,13 @@
 <div class= "container">
   <div class ="main-container">
     <h1 class="login"><%= @educationcenter.name %> </h1><br>
+    <br>
     <h2 class ="login"><%= @educationcenter.city %></h2><br>
     <br>
     <p class ="parrafos"><%= @educationcenter.description %></p><br>
-       <%= link_to "Delete",
+      <!--  <%= link_to "Delete",
       education_center_path(@educationcenter),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>-->
   </div>
 <br>
 <br>
@@ -40,7 +41,7 @@
 <div>
 <br>
 <br>
-   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>
+   <!--<%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>-->
 </div>
       </div>
       <br>
