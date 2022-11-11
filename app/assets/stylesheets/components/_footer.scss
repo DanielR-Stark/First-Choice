@@ -1,3 +1,13 @@
 .footer {
   background-color: #6B64F6;
 }
+
+.footer-text {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-text:hover {
+  color: white;
+  text-decoration: underline;
+}
