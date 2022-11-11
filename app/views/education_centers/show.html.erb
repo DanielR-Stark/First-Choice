@@ -1,67 +1,67 @@
 <div class= "container">
-
   <div class ="main-container">
     <h1 class="login"><%= @educationcenter.name %> </h1><br>
+    <br>
     <h2 class ="login"><%= @educationcenter.city %></h2><br>
     <br>
     <p class ="parrafos"><%= @educationcenter.description %></p><br>
-       <%= link_to "Delete",
+      <!--  <%= link_to "Delete",
       education_center_path(@educationcenter),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "button-delete"%>-->
   </div>
-
-  <div class ="ctn-tarjetas">
-
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="login"> Desarrollo Web</h2>
-            <p class="parrafos">Impulsa tu carrera con nuestro curso en Desarrollo web. Aprende a crear aplicaciones web desde cero y consigue el trabajo de tus sueños como desarrollador web con el curso intensivo número uno en el mundo..</p>
-            <img height="420" width="500"class ="card-img" src="https://www-img.lewagon.com/UHFwzDxe8Ae8DsOKHT516FORYV5dQ93Fh2haggWCnVE/rs:fill:1000:840/plain/s3://wagon-www/14tm6j8mjp0zyo4vk5h0upq21rrm" alt="minita en el pc">
-            <a href="https://www.lewagon.com/es/web-development-course" class="myButton">Mas información</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="login"> Data Science</h2>
-            <p class="parrafos">Da un giro a tu carrera profesional con nuestro curso de Data Science Explora los fundamentos del Data Science y consigue el trabajo de tus sueños con el curso intensivo número uno del mundo..</p>
-            <img height="420" width="500"class ="card-img" src="https://www-img.lewagon.com/QG0NV5COlYabLiH5HuWcsd_E805g3vnbzKPfWNOp-b8/rs:fill:1000:840/plain/s3://wagon-www/4sy2d2fdud1g7rx5e8k1l3c2bwii" alt="minito en el pc">
-
-            <a href="https://www.lewagon.com/es/data-science-course#authors" class="myButton">Mas información</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-  <h4 class ="login">Reviews</h4>
+<br>
+<br>
+  <h1 class ="login">Carreras</h1>
   <div class="row">
-    <div class="col-md-4">
-
-     <% @educationcenter.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.statement %> Rating: <%= review.rating%>
-    <%= link_to "Eliminar",  review_path(review), data: {turbo_method: :delete, confirm: "Seguro?"} %></li>
-  <% end %>
-
-</div>
+    <div>
+     <div class ="ctn-tarjetas1">
+      <h2 class="login"> <% @educationcenter.careers.each do |career| %></h2>
+             <div class="card2">
+               <div class="card-body">
+                  <div class ="ctn-parrafos69">
+                  <h3 class="h-cards2"> <%= career.name %></h3>
+                  <p class="p-cards2"> <%= career.description %></p>
+                  <p class="p-cards2"> <%= career.duration %></p>
+                  <p class="p-cards2"> <%= career.modality %></p>
+                  </div>
+                  <div class ="card-img-show">
+                    <% images= ["https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/04/programador-1921673.jpg","https://tuataras.net/wp-content/uploads/Persona-programando.png","https://st2.depositphotos.com/1017228/9855/i/450/depositphotos_98555688-stock-photo-thoughtful-programmer-coding-in-the.jpg","https://st2.depositphotos.com/1010613/8093/i/600/depositphotos_80939642-stock-photo-man-programming-code-on-computers.jpg","https://ubiqum.com/assets/uploads/2019/03/web-development-java-program-9.jpg","https://thumbs.dreamstime.com/b/el-programador-profesional-joven-que-trabaja-en-la-programaci%C3%B3n-se-convierte-y-p%C3%A1gina-web-un-software-desarrollan-oficina-de-151513145.jpg", "https://distintaslatitudes.net/storage/2020/03/taller-programacio%CC%81n-personas-trans-scaled.jpg","https://internetpasoapaso.com/wp-content/uploads/Visual-BAsic.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTCobfCufxSHlIpjkczGB278ExDRbDRXrHJ72cona4wMOzf6PfUvDOL_FMQdjc7ZJ32I&usqp=CAU","https://www.nosequeestudiar.net/site/assets/files/2440/programadora-haciendo-codigo.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHfggdBRnCYxf1jTwI59c6cNSzBJ2FUy29rzvoqiAkjx9M0qCH8FeWG72w2pzJqeCZYa0&usqp=CAU","https://www.criptonoticias.com/wp-content/uploads/2022/05/100-estudiantes-becados-aprender-programar-ethereum-1140x570.jpg","https://i2.wp.com/blog.empleate.com/wp-content/uploads/2020/08/lenguajes_de_programacion_mas_usados.jpg?fit=724%2C483"] %>
+                    <%= image_tag "#{images.sample}", alt: "imagen carreras", class:"card-img-left69"  %>
+                  </div>
+                  <br>
+                  <br>
+                 <a href="https://www.lewagon.com/es/web-development-course" class="myButton420" target="blank">Mas información</a>
+                 <br>
+                 <br>
+                  </div>
+                </div>
+    <% end %>
+    </div>
+  </div>
 <div>
-   <%= link_to "Add review", new_education_center_review_path(@educationcenter), class: "myButton" %>
+<br>
+<br>
+   <!--<%= link_to "Add Carrera", new_education_center_career_path(@educationcenter), class:"myButton"%>-->
+</div>
+      </div>
+      <br>
+      <br>
+  <h3 class ="login">Reviews</h3>
+  <% @educationcenter.reviews.each do |review| %>
+    <li class="list-group-item"><p><%= review.statement %> Rating: <%= review.rating%></p>
 
-<h2>Carreras</h2>
-<div class="row">
-    <div class="col-md-4">
-
-     <% @educationcenter.careers.each do |career| %>
-    <li class="list-group-item"><%= career.name %> Modalidad: <%= career.modality %>
-    <%= link_to "Eliminar",  career_path(career), data: {turbo_method: :delete, confirm: "Seguro?"} %></li>
+    </li>
   <% end %>
+  <div class ="btn-review">
+    <%= link_to "Add review", new_education_center_review_path(@educationcenter), class: "myButton" %>
+    <br>
+    <br>
+  </div>
 </div>
-<div>
-   <%= link_to "Add Carrera", new_education_center_career_path(@educationcenter) %>
 </div>
-</div>
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Recuerda!</strong> leer las reseñas</span>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
 </div>

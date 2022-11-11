@@ -6,9 +6,14 @@
 
 <% if review.user_id == current_user.id  %>
 
+<% if policy(Review).edit? %>
 <%= link_to "Edit", edit_education_center_review_path(review.educationcenter, review) %>
+<% end %>
+
+<% if policy(Review).destroy? %>
 <%= link_to "Delete", education_center_review_path(review.educationcenter, review), method: :delete, data: {
   confirm: "Are you sure?"} %>
+  <% end %>
 
   <% end %>
 

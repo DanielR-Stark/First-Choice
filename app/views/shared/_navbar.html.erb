@@ -1,7 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://i.pinimg.com/originals/11/74/21/1174215797dec302c416c52eaac5fc46.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://images.vexels.com/media/users/3/166440/isolated/preview/ddaf323ea5ed30054ba4a894f9aa13d7-silueta-de-gorro-de-birrete.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,12 +16,21 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ver academias", education_centers_path, class: "nav-link" %>
+            <%= link_to "Ver academias", education_centers_path, class: "nav-link" %>
+          </li>
+          <li>
+           <%= link_to "Test Rapido" ,  new_quiz_path, class: "nav-link"%>
+
+          </li>
+
+          <li>
+          <input type="text" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Search for a Bootcamp">
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1617469125/ibiynnzzmx7weekhymoa.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-HD-Image.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <!--<%= link_to "Action", "#", class: "dropdown-item" %>   Botonacciobn-->
+              <%= link_to "Test rapido", "#", class: "dropdown-item" %>
               <!--<%= link_to "Another action", "#", class: "dropdown-item" %> Botoncito-->
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
